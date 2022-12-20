@@ -1,0 +1,34 @@
+{
+  "name": "@tailwind-rc/date-picker",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/module.js",
+  "types": "dist/index.d.ts",
+  "repository": "git@github.com:Apozhidaev/tailwindcss-date-picker.git",
+  "author": "alexanderpo <alexander.pozhidaev@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build:ts": "tsc",
+    "build:cjs": "esbuild src/index.tsx --format=cjs --bundle --outfile=dist/index.js --external:*",
+    "build:esm": "esbuild src/index.tsx --format=esm --bundle --outfile=dist/module.js --external:*",
+    "build": "yarn run build:cjs && yarn run build:esm && yarn run build:ts"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "react-easepick": "^0.0.6",
+    "react-use-event-hook": "^0.9.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "esbuild": "^0.16.9",
+    "react": "^18.2.0",
+    "typescript": "^4.9.4"
+  }
+}
