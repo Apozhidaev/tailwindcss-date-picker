@@ -1,5 +1,2 @@
 node_modules/
 dist/
-range/module.js
-range/index.d.ts
-range/index.js

@@ -1,6 +1,6 @@
 {
   "name": "@tailwind-rc/date-picker",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "module": "dist/module.js",
   "types": "dist/index.d.ts",
@@ -17,10 +17,10 @@
   ],
   "scripts": {
     "build:ts": "tsc",
-    "build:cjs": "esbuild src/index.tsx --format=cjs --bundle --outfile=dist/index.js --external:./node_modules/*",
-    "build:esm": "esbuild src/index.tsx --format=esm --bundle --outfile=dist/module.js --external:./node_modules/*",
-    "build:range:cjs": "esbuild src/range.tsx --format=cjs --bundle --outfile=range/index.js --external:./node_modules/*",
-    "build:range:esm": "esbuild src/range.tsx --format=esm --bundle --outfile=range/module.js --external:./node_modules/*",
+    "build:cjs": "esbuild src/index.tsx --format=cjs --bundle --outfile=dist/index.js --external:@heroicons/* --external:react* --external:classnames",
+    "build:esm": "esbuild src/index.tsx --format=esm --bundle --outfile=dist/module.js --external:@heroicons/* --external:react* --external:classnames",
+    "build:range:cjs": "esbuild src/range.tsx --format=cjs --bundle --outfile=dist/range.js --external:@heroicons/* --external:react* --external:classnames",
+    "build:range:esm": "esbuild src/range.tsx --format=esm --bundle --outfile=dist/range.module.js --external:@heroicons/* --external:react* --external:classnames",
     "build": "yarn run build:cjs && yarn run build:esm && yarn run build:range:cjs && yarn run build:range:esm && yarn run build:ts"
   },
   "peerDependencies": {
