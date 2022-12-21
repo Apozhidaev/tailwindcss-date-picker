@@ -1,4 +1,4 @@
-export const presetCss: string = `
+export const presetCss = /* css */ `
 .container.preset-plugin > main {
   display: flex;
 }
@@ -32,9 +32,9 @@ export const presetCss: string = `
 .preset-plugin-container > button {
   background-color: var(--color-bg-default);
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 3px;
   color: var(--color-fg-default);
-  padding: 5px;
+  padding: 6px 10px;
 }
 .preset-plugin-container > button:hover {
   border: 1px solid var(--color-fg-primary);

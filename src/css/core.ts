@@ -1,12 +1,12 @@
-export const coreCss: string = `
+export const coreCss = /* css */ `
 :host {
   --color-bg-default: #fff;
-  --color-bg-secondary: #f9f9f9;
-  --color-fg-default: #333;
+  --color-bg-secondary: #f1f5f9;
+  --color-fg-default: #1e293b;
   --color-fg-primary: var(--ease-color-fg-primary, #2e6fda);
-  --color-fg-secondary: #748194;
+  --color-fg-secondary: #64748b;
   --color-fg-selected: #fff;
-  --color-fg-muted: #9e9e9e;
+  --color-fg-muted: #94a3b8;
   --color-fg-accent: #e63757;
   --color-btn-primary-bg: var(--ease-color-btn-primary-bg, #2e6fda);
   --color-btn-primary-fg: var(--ease-color-btn-primary-fg, #fff);
@@ -18,25 +18,25 @@ export const coreCss: string = `
   --color-btn-primary-disabled-fg: #fff;
   --color-btn-primary-disabled-border: var(--ease-color-btn-primary-disabled-border, #80aff8);;
   --color-btn-secondary-bg: #fff;
-  --color-btn-secondary-fg: #748194;
-  --color-btn-secondary-border: #748194;
-  --color-btn-secondary-hover-bg: #748194;
+  --color-btn-secondary-fg: #64748b;
+  --color-btn-secondary-border: #64748b;
+  --color-btn-secondary-hover-bg: #64748b;
   --color-btn-secondary-hover-fg: #fff;
-  --color-btn-secondary-hover-border: #748194;
-  --color-btn-secondary-disabled-bg: #b5bbc4;
+  --color-btn-secondary-hover-border: #64748b;
+  --color-btn-secondary-disabled-bg: #cbd5e1;
   --color-btn-secondary-disabled-fg: #fff;
-  --color-btn-secondary-disabled-border: #b5bbc4;
-  --color-border-default: #ddd;
+  --color-btn-secondary-disabled-border: #cbd5e1;
+  --color-border-default: #cbd5e1;
   --color-border-locked: #f9f9f9;
-  --day-width: 42px;
+  --day-width: var(--ease-day-width, 42px);
   --day-height: 37px;
   --border-radius: 2px;
   --primary-color: var(--ease-primary-color, #2e6fda);
-  --secondary-color: #748194;
+  --secondary-color: #64748b;
   --white-color: #fff;
-  --black-color: #333;
-  --lightgray-color: #f9f9f9;
-  --gray-color: #9e9e9e;
+  --black-color: #1e293b;
+  --lightgray-color: #f1f5f9;
+  --gray-color: #94a3b8;
   --red-color: #e63757;
 }
 * {
@@ -65,7 +65,7 @@ export const coreCss: string = `
   visibility: hidden;
 }
 .container.show {
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 28px 0 rgb(0 0 0 / 12%);
   height: auto;
   transform: scale(1);
 }
@@ -97,7 +97,7 @@ export const coreCss: string = `
   border: 1px solid transparent;
   border-radius: var(--border-radius);
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 6px 12px;
 }
 .container > footer .footer-buttons > button.apply-button {
   background-color: var(--color-btn-primary-bg);

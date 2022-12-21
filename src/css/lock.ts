@@ -1,4 +1,4 @@
-export const lockCss: string = `
+export const lockCss = /* css */ `
 :host {
   --color-fg-locked: #9e9e9e;
   --color-bg-locked: #ffab91;

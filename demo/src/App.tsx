@@ -21,10 +21,12 @@ function App() {
         }}
         customPreset={{
           "Last Week": [new Date("2021-01-01"), new Date()],
-          "Last Year": [new Date("2022-01-01"), new Date()],
+          "Last Month": [new Date("2022-01-01"), new Date()],
+          "Last Year": [new Date("2019-01-01"), new Date()],
         }}
         filter
         position="right"
+        // autoApply={false}
       />
     </div>
   );
