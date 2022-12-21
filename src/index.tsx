@@ -9,7 +9,7 @@ import EasePicker, {
   DateTime,
 } from "react-easepick";
 import { adjustLeftPosition } from "./utils";
-import { datePickerCss } from "./css/date-picker";
+import { datePickerCss, resetButtonIcon } from "./assets/date-picker";
 
 type Props = {
   className?: string;
@@ -20,6 +20,7 @@ type Props = {
   format?: string;
   placeholder?: string;
   position?: "left" | "right";
+  resetButton?: boolean;
 };
 
 export function DatePickerInput({
@@ -31,6 +32,7 @@ export function DatePickerInput({
   format = "DD MMM, YYYY",
   placeholder,
   position,
+  resetButton = true,
 }: Props) {
   const handleSelect = useEvent(onSelect);
   const options: EasePickOptions = useMemo(
@@ -44,10 +46,10 @@ export function DatePickerInput({
           minYear: minDate ? new DateTime(minDate).getFullYear() : undefined,
           maxYear: maxDate ? new DateTime(maxDate).getFullYear() : undefined,
         },
-        resetButton: true,
+        resetButton,
         darkMode: false,
         locale: {
-          resetButton: "DEL",
+          resetButton: resetButtonIcon,
         },
       },
       LockPlugin: {

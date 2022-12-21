@@ -211,6 +211,7 @@ export const coreCss = /* css */ `
   border: 1px solid transparent;
   border-radius: 2px;
   color: var(--color-btn-secondary-fg);
+  fill: var(--color-btn-secondary-fg);
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -221,12 +222,10 @@ export const coreCss = /* css */ `
 }
 .calendar > .header button:hover > img,
 .calendar > .header button:hover > svg {
-  fill: var(--color-fg-primary);
   color: var(--color-fg-primary);
 }
 .calendar > .header button > img,
 .calendar > .header button > svg {
-  fill: var(--color-btn-secondary-fg);
   color: var(--color-btn-secondary-fg);
   pointer-events: none;
   transform: scale(0.7);

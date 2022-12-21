@@ -11,7 +11,8 @@ import EasePicker, {
   DateTime,
 } from "react-easepick";
 import { adjustLeftPosition } from "./utils";
-import { rangePickerCss } from "./css/range-picker";
+import { rangePickerCss, resetButtonIcon } from "./assets/range-picker";
+
 
 type Props = {
   className?: string;
@@ -25,6 +26,7 @@ type Props = {
   placeholder?: string;
   position?: "left" | "right";
   autoApply?: boolean;
+  resetButton?: boolean;
 };
 
 export function RangePickerInput({
@@ -39,6 +41,7 @@ export function RangePickerInput({
   placeholder = "Start date – End date",
   position,
   autoApply = true,
+  resetButton = true,
 }: Props) {
   const handleSelect = useEvent(onSelect);
   const options: EasePickOptions = useMemo(
@@ -55,10 +58,10 @@ export function RangePickerInput({
           minYear: minDate ? new DateTime(minDate).getFullYear() : undefined,
           maxYear: maxDate ? new DateTime(maxDate).getFullYear() : undefined,
         },
-        resetButton: true,
+        resetButton,
         darkMode: false,
         locale: {
-          resetButton: "DEL",
+          resetButton: resetButtonIcon,
         },
       },
       LockPlugin: {
