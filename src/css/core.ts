@@ -1,25 +1,25 @@
 export const coreCss = /* css */ `
 :host {
   --color-bg-default: #fff;
-  --color-bg-secondary: #f1f5f9;
+  --color-bg-secondary: #f3f4f6;
   --color-fg-default: #1e293b;
   --color-fg-primary: var(--ease-color-fg-primary, #2e6fda);
   --color-fg-secondary: #64748b;
   --color-fg-selected: #fff;
-  --color-fg-muted: #94a3b8;
+  --color-fg-muted: #64748b;
   --color-fg-accent: #e63757;
   --color-btn-primary-bg: var(--ease-color-btn-primary-bg, #2e6fda);
   --color-btn-primary-fg: var(--ease-color-btn-primary-fg, #fff);
   --color-btn-primary-border: var(--ease-color-btn-primary-border, #2e6fda);
-  --color-btn-primary-hover-bg: var(--ease-color-btn-primary-hover-bg, #2e6fda);
+  --color-btn-primary-hover-bg: var(--ease-color-btn-primary-hover-bg, #2c67cd);
   --color-btn-primary-hover-fg: #fff;
-  --color-btn-primary-hover-border: var(--ease-color-btn-primary-hover-border, #2e6fda);
+  --color-btn-primary-hover-border: var(--ease-color-btn-primary-hover-border, #2c67cd);
   --color-btn-primary-disabled-bg: var(--ease-color-btn-primary-disabled-bg, #80aff8);
   --color-btn-primary-disabled-fg: #fff;
   --color-btn-primary-disabled-border: var(--ease-color-btn-primary-disabled-border, #80aff8);;
   --color-btn-secondary-bg: #fff;
-  --color-btn-secondary-fg: #64748b;
-  --color-btn-secondary-border: #64748b;
+  --color-btn-secondary-fg: #475569;
+  --color-btn-secondary-border: #cbd5e1;
   --color-btn-secondary-hover-bg: #64748b;
   --color-btn-secondary-hover-fg: #fff;
   --color-btn-secondary-hover-border: #64748b;
