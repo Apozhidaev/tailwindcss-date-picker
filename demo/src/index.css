@@ -11,6 +11,10 @@
     @apply max-w-[180px]
   }
 
+  .form-range-picker {
+    @apply max-w-[250px]
+  }
+
   .form-filter {
     @apply ring-1 border-orange-300/80 ring-orange-300/80;
   }

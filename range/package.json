@@ -1,0 +1,6 @@
+{
+  "main": "index.js",
+  "module": "module.js",
+  "types": "index.d.ts",
+  "sideEffects": false
+}
