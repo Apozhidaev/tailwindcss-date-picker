@@ -10,9 +10,11 @@ import EasePicker, {
   PresetPlugin,
   DateTime,
 } from "react-easepick";
-import { adjustLeftPosition } from "./utils";
-import { rangePickerCss, resetButtonIcon } from "./assets/range-picker";
-
+import {
+  rangePickerCss,
+  resetButtonIcon,
+  adjustLeftPosition,
+} from "./common/range-picker";
 
 type Props = {
   className?: string;

@@ -1,8 +1,8 @@
 export const rangeCss = /* css */ `
 :host {
   --color-bg-inrange: var(--ease-color-bg-inrange, #e6effe);
-  --color-bg-tooltip: #fff;
-  --color-fg-tooltip: #1e293b;
+  --color-bg-tooltip: var(--ease-color-bg-tooltip, #fff);
+  --color-fg-tooltip: var(--ease-color-fg-tooltip, #1e293b);
 }
 .range-plugin-tooltip {
   background-color: var(--color-bg-tooltip);
