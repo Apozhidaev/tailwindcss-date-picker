@@ -30,12 +30,16 @@ export const coreCss = /* css */ `
   --color-border-locked: var(--ease-color-border-locked, #f9f9f9);
   --day-width: var(--ease-day-width, 42px);
   --day-height: var(--ease-day-height, 37px);
+  --popup-z-index: var(--ease-popup-z-index, 40);
   --border-radius: var(--ease-border-radius, 2px);
   --primary-color: var(--ease-primary-color, #2e6fda);
   --secondary-color: var(--ease-secondary-color, #64748b);
 }
 * {
   box-sizing: border-box;
+}
+.easepick-wrapper {
+  z-index: var(--popup-z-index);
 }
 .container {
   border-radius: 4px;
