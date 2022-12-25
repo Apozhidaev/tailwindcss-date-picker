@@ -1,6 +1,6 @@
 {
   "name": "@tailwind-rc/date-picker",
-  "version": "0.0.11",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/module.js",
   "types": "dist/index.d.ts",
@@ -12,8 +12,7 @@
   },
   "files": [
     "dist",
-    "date",
-    "range",
+    "route",
     "src"
   ],
   "scripts": {
@@ -21,11 +20,9 @@
     "build:ts": "tsc && yarn run clean",
     "build:cjs": "esbuild src/index.tsx --format=cjs --bundle --outfile=dist/index.js --external:@heroicons/* --external:react* --external:classnames",
     "build:esm": "esbuild src/index.tsx --format=esm --bundle --outfile=dist/module.js --external:@heroicons/* --external:react* --external:classnames",
-    "build:date:cjs": "esbuild src/date.tsx --format=cjs --bundle --outfile=date/index.js --external:@heroicons/* --external:react* --external:classnames",
-    "build:date:esm": "esbuild src/date.tsx --format=esm --bundle --outfile=date/module.js --external:@heroicons/* --external:react* --external:classnames",
-    "build:range:cjs": "esbuild src/range.tsx --format=cjs --bundle --outfile=range/index.js --external:@heroicons/* --external:react* --external:classnames",
-    "build:range:esm": "esbuild src/range.tsx --format=esm --bundle --outfile=range/module.js --external:@heroicons/* --external:react* --external:classnames",
-    "build": "yarn run build:cjs && yarn run build:esm && yarn run build:date:cjs && yarn run build:date:esm && yarn run build:range:cjs && yarn run build:range:esm && yarn run build:ts"
+    "build:route:cjs": "esbuild src/route/index.tsx --format=cjs --bundle --outfile=route/index.js --external:@heroicons/* --external:react* --external:classnames",
+    "build:route:esm": "esbuild src/route/index.tsx --format=esm --bundle --outfile=route/module.js --external:@heroicons/* --external:react* --external:classnames",
+    "build": "yarn run build:cjs && yarn run build:esm && yarn run build:route:cjs && yarn run build:route:esm && yarn run build:ts"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
@@ -33,13 +30,13 @@
   "dependencies": {
     "@heroicons/react": "^2.0.13",
     "classnames": "^2.3.2",
-    "react-easepick": "^0.0.6",
-    "react-use-event-hook": "^0.9.3"
+    "react-ease-picker": "^0.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
     "esbuild": "^0.16.9",
     "react": "^18.2.0",
+    "react-router-dom": "^6.6.1",
     "typescript": "^4.9.4"
   }
 }
