@@ -1,6 +1,8 @@
-import DatePicker, { DatePickerProps } from "./date";
-import RangePicker, { RangePickerProps } from "./range";
+import type { DatePickerProps } from "./date";
+import type { RangePickerProps } from "./range";
+import DatePicker from "./date";
+import RangePicker from "./range";
 
-export { DatePicker, RangePicker, DatePickerProps, RangePickerProps };
-
+export type { DatePickerProps, RangePickerProps };
+export { DatePicker, RangePicker };
 export default DatePicker;
