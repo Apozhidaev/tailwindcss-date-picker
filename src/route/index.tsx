@@ -1,8 +1,13 @@
-import type { DatePickerProps } from "./date";
-import type { RangePickerProps } from "./range";
-import DatePicker from "./date";
-import RangePicker from "./range";
+import type { DatePickerProps, RouteDatePickerProps } from "./date";
+import type { RangePickerProps, RouteRangePickerProps } from "./range";
+import RouteDatePicker, { DatePicker } from "./date";
+import RouteRangePicker, { RangePicker } from "./range";
 
-export type { DatePickerProps, RangePickerProps };
-export { DatePicker, RangePicker };
-export default DatePicker;
+export type {
+  DatePickerProps,
+  RangePickerProps,
+  RouteDatePickerProps,
+  RouteRangePickerProps,
+};
+export { DatePicker, RangePicker, RouteDatePicker, RouteRangePicker };
+export default RouteDatePicker;

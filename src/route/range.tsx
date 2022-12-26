@@ -1,8 +1,12 @@
 import React, { memo } from "react";
 import { useSearchParams } from "react-router-dom";
-import RangePicker, { RangePickerProps as Props } from "../range";
+import type { RangePickerProps } from "../range";
+import RangePicker from "../range";
 
-export type RangePickerProps = Omit<Props, "startDate" | "endDate" | "onSelect"> & {
+export type RouteRangePickerProps = Omit<
+  RangePickerProps,
+  "startDate" | "endDate" | "onSelect"
+> & {
   startFilterName: string;
   endFilterName: string;
   emptyValue?: boolean;
@@ -13,7 +17,7 @@ function RouteRangePicker({
   endFilterName,
   emptyValue,
   ...rest
-}: RangePickerProps) {
+}: RouteRangePickerProps) {
   const [searchParams, setSearchParams] = useSearchParams();
   const startDate = searchParams.get(startFilterName) || "";
   const endDate = searchParams.get(endFilterName) || "";
@@ -42,4 +46,6 @@ function RouteRangePicker({
   );
 }
 
+export type { RangePickerProps };
+export { RangePicker };
 export default memo(RouteRangePicker);

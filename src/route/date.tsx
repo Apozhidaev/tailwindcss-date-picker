@@ -1,13 +1,21 @@
 import React, { memo } from "react";
 import { useSearchParams } from "react-router-dom";
-import DatePicker, { DatePickerProps as Props } from "../date";
+import type { DatePickerProps } from "../date";
+import DatePicker from "../date";
 
-export type DatePickerProps = Omit<Props, "date" | "onSelect"> & {
+export type RouteDatePickerProps = Omit<
+  DatePickerProps,
+  "date" | "onSelect"
+> & {
   filterName: string;
   emptyValue?: boolean;
 };
 
-function RouteDatePicker({ filterName, emptyValue, ...rest }: DatePickerProps) {
+function RouteDatePicker({
+  filterName,
+  emptyValue,
+  ...rest
+}: RouteDatePickerProps) {
   const [searchParams, setSearchParams] = useSearchParams();
   const date = searchParams.get(filterName) || "";
 
@@ -24,4 +32,6 @@ function RouteDatePicker({ filterName, emptyValue, ...rest }: DatePickerProps) {
   return <DatePicker {...rest} date={date} onSelect={onSelect} />;
 }
 
+export type { DatePickerProps };
+export { DatePicker };
 export default memo(RouteDatePicker);

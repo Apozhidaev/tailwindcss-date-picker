@@ -1,5 +1,5 @@
-import DatePicker from "../../src/index";
-import RangePicker from "../../src/range";
+import { DatePicker } from "../../src/route/index";
+import { RangePicker } from "../../src/route/index";
 
 function App() {
   return (
