@@ -60,37 +60,52 @@ export default App;
 ```typescript
 type DatePickerProps = {
   className?: string;
-  date?: string;
   minDate?: string;
   maxDate?: string;
-  onSelect: (date: string) => void;
   format?: string;
   placeholder?: string;
   position?: "left" | "right";
   resetButton?: boolean;
-  filter?: boolean
+  firstDay?: number;
+  lang?: string;
+  zIndex?: number;
+  scrollToDate?: boolean;
+  documentClick?: boolean | (() => void);
+  autoApply?: boolean;
+  cancelText?: string;
+  applyText?: string;
+  filter?: boolean;
+  date?: string;
+  onSelect: (date: string) => void;
 }
 
 type RangePickerPreset = {
   label: string;
-  startDate: string;
-  endDate: string;
+  startDate?: string;
+  endDate?: string;
 };
 
 type RangePickerProps = {
   className?: string;
-  startDate?: string;
-  endDate?: string;
   minDate?: string;
   maxDate?: string;
-  onSelect: (start: string, end: string) => void;
   format?: string;
-  presets?: RangePickerPreset[];
   placeholder?: string;
   position?: "left" | "right";
-  autoApply?: boolean;
   resetButton?: boolean;
-  filter?: boolean
+  firstDay?: number;
+  lang?: string;
+  zIndex?: number;
+  scrollToDate?: boolean;
+  documentClick?: boolean | (() => void);
+  autoApply?: boolean;
+  cancelText?: string;
+  applyText?: string;
+  filter?: boolean;
+  presets?: RangePickerPreset[];
+  startDate?: string;
+  endDate?: string;
+  onSelect: (start: string, end: string) => void;
 };
 
 ```
@@ -104,20 +119,12 @@ npm i react-router-dom
 ```jsx
 import { RouteDatePicker, RouteRangePicker } from "@tailwind-rc/date-picker/route";
 
-function App() {
-  
-}
-
-export default App;
-
 ```
 
 ### Props
 
 ```typescript
 type DatePickerProps = {
-  filterName: string;
-  emptyValue?: boolean;
   className?: string;
   minDate?: string;
   maxDate?: string;
@@ -125,23 +132,40 @@ type DatePickerProps = {
   placeholder?: string;
   position?: "left" | "right";
   resetButton?: boolean;
-  filter?: boolean
+  firstDay?: number;
+  lang?: string;
+  zIndex?: number;
+  scrollToDate?: boolean;
+  documentClick?: boolean | (() => void);
+  autoApply?: boolean;
+  cancelText?: string;
+  applyText?: string;
+  filter?: boolean;
+  filterName: string;
+  emptyValue?: boolean;
 }
 
 type RangePickerProps = {
-  startFilterName: string;
-  endFilterName: string;
-  emptyValue?: boolean;
   className?: string;
   minDate?: string;
   maxDate?: string;
   format?: string;
-  presets?: RangePickerPreset[];
   placeholder?: string;
   position?: "left" | "right";
-  autoApply?: boolean;
   resetButton?: boolean;
-  filter?: boolean
+  firstDay?: number;
+  lang?: string;
+  zIndex?: number;
+  scrollToDate?: boolean;
+  documentClick?: boolean | (() => void);
+  autoApply?: boolean;
+  cancelText?: string;
+  applyText?: string;
+  filter?: boolean;
+  presets?: RangePickerPreset[];
+  startFilterName: string;
+  endFilterName: string;
+  emptyValue?: boolean;
 };
 
 ```

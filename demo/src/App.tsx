@@ -1,5 +1,5 @@
-import { DatePicker } from "../../src/route/index";
-import { RangePicker } from "../../src/route/index";
+import { DatePicker } from "../../src/index";
+import { RangePicker } from "../../src/index";
 
 function App() {
   return (
@@ -10,7 +10,6 @@ function App() {
         onSelect={(date) => {
           console.log(date);
         }}
-        filter
       />
       <RangePicker
         minDate="2020-01-01"
