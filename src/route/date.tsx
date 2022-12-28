@@ -5,31 +5,40 @@ import DatePicker from "../date";
 
 export type RouteDatePickerProps = Omit<
   DatePickerProps,
-  "date" | "onSelect"
+  "date" | "onSelect" | "filter"
 > & {
   filterName: string;
-  emptyValue?: boolean;
+  defaultDate?: string;
 };
 
 function RouteDatePicker({
   filterName,
-  emptyValue,
+  defaultDate = "",
   ...rest
 }: RouteDatePickerProps) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const date = searchParams.get(filterName) || "";
+  const date = searchParams.has(filterName)
+    ? searchParams.get(filterName)
+    : defaultDate;
 
   const onSelect = (value: string) => {
     searchParams.delete(filterName);
 
-    if (value || emptyValue) {
+    if (value !== defaultDate) {
       searchParams.set(filterName, value);
     }
 
     setSearchParams(searchParams, { replace: true });
   };
 
-  return <DatePicker {...rest} date={date} onSelect={onSelect} />;
+  return (
+    <DatePicker
+      {...rest}
+      date={date || ""}
+      onSelect={onSelect}
+      filter={searchParams.has(filterName)}
+    />
+  );
 }
 
 export type { DatePickerProps };

@@ -5,31 +5,37 @@ import RangePicker from "../range";
 
 export type RouteRangePickerProps = Omit<
   RangePickerProps,
-  "startDate" | "endDate" | "onSelect"
+  "startDate" | "endDate" | "onSelect" | "filter"
 > & {
   startFilterName: string;
   endFilterName: string;
-  emptyValue?: boolean;
+  defaultStartDate?: string;
+  defaultEndDate?: string;
 };
 
 function RouteRangePicker({
   startFilterName,
   endFilterName,
-  emptyValue,
+  defaultStartDate = "",
+  defaultEndDate = "",
   ...rest
 }: RouteRangePickerProps) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const startDate = searchParams.get(startFilterName) || "";
-  const endDate = searchParams.get(endFilterName) || "";
+  const startDate = searchParams.has(startFilterName)
+    ? searchParams.get(startFilterName)
+    : defaultStartDate;
+  const endDate = searchParams.has(endFilterName)
+    ? searchParams.get(endFilterName)
+    : defaultEndDate;
 
   const onSelect = (start: string, end: string) => {
     searchParams.delete(startFilterName);
     searchParams.delete(endFilterName);
 
-    if (start || emptyValue) {
+    if (start !== defaultStartDate) {
       searchParams.set(startFilterName, start);
     }
-    if (end || emptyValue) {
+    if (end !== defaultEndDate) {
       searchParams.set(endFilterName, end);
     }
 
@@ -39,9 +45,12 @@ function RouteRangePicker({
   return (
     <RangePicker
       {...rest}
-      startDate={startDate}
-      endDate={endDate}
+      startDate={startDate || ""}
+      endDate={endDate || ""}
       onSelect={onSelect}
+      filter={
+        searchParams.has(startFilterName) || searchParams.has(endFilterName)
+      }
     />
   );
 }

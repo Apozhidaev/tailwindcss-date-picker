@@ -10,6 +10,17 @@ npm i @tailwind-rc/date-picker
 ```
 
 Step 2.
+
+Add to `tailwind.config.cjs`
+```diff
+content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
++   "./node_modules/@tailwind-rc/**/*.{js,ts,jsx,tsx}",
+],
+```
+
+Step 3.
 ```jsx
 import { DatePicker, RangePicker } from "@tailwind-rc/date-picker";
 
@@ -127,6 +138,8 @@ import { RouteDatePicker, RouteRangePicker } from "@tailwind-rc/date-picker/rout
 
 ```typescript
 type DatePickerProps = {
+  filterName: string;
+  defaultDate?: string;
   className?: string;
   minDate?: string;
   maxDate?: string;
@@ -142,12 +155,13 @@ type DatePickerProps = {
   autoApply?: boolean;
   cancelText?: string;
   applyText?: string;
-  filter?: boolean;
-  filterName: string;
-  emptyValue?: boolean;
 }
 
 type RangePickerProps = {
+  startFilterName: string;
+  endFilterName: string;
+  defaultStartDate?: string;
+  defaultEndDate?: string;
   className?: string;
   minDate?: string;
   maxDate?: string;
@@ -163,11 +177,7 @@ type RangePickerProps = {
   autoApply?: boolean;
   cancelText?: string;
   applyText?: string;
-  filter?: boolean;
   presets?: RangePickerPreset[];
-  startFilterName: string;
-  endFilterName: string;
-  emptyValue?: boolean;
 };
 
 ```
@@ -211,9 +221,7 @@ type RangePickerProps = {
   --ease-secondary-color: #64748b;
   --ease-font-family: inherit;
   --ease-box-shadow: 0 4px 28px 0 rgb(0 0 0 / 12%);
-
   --ease-month-name-font-weight: 700;
-
   --ease-color-fg-locked: #9e9e9e;
   --ease-color-bg-locked: #ffab91;
   --ease-color-bg-unavailable: #f9f9f9;
