@@ -33,11 +33,8 @@ function App() {
         onSelect={(date) => {
           console.log(date);
         }}
-        filter
       />
       <RangePicker
-        minDate="2020-01-01"
-        maxDate="2023-01-01"
         onSelect={(start, end) => {
           console.log(start, end);
         }}
@@ -50,11 +47,6 @@ function App() {
           {
             label: "Last Month",
             startDate: "2021-01-01",
-            endDate: "2023-01-01",
-          },
-          {
-            label: "Last Year",
-            startDate: "2019-01-01",
             endDate: "2023-01-01",
           },
         ]}
@@ -155,6 +147,7 @@ type DatePickerProps = {
   autoApply?: boolean;
   cancelText?: string;
   applyText?: string;
+  filter?: boolean;
 }
 
 type RangePickerProps = {
@@ -178,6 +171,7 @@ type RangePickerProps = {
   cancelText?: string;
   applyText?: string;
   presets?: RangePickerPreset[];
+  filter?: boolean;
 };
 
 ```
