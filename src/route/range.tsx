@@ -30,7 +30,7 @@ function RouteRangePicker({
       searchParams.set(startFilterName, start);
     }
     if (end || emptyValue) {
-      searchParams.set(startFilterName, end);
+      searchParams.set(endFilterName, end);
     }
 
     setSearchParams(searchParams, { replace: true });
