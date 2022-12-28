@@ -10,6 +10,7 @@ function App() {
         onSelect={(date) => {
           console.log(date);
         }}
+        filter
       />
       <RangePicker
         minDate="2020-01-01"

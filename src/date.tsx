@@ -15,8 +15,8 @@ function DatePicker({ className, filter, ...inputProps }: DatePickerProps) {
       <DatePickerInput
         {...inputProps}
         className={classNames(
-          "pl-10 pr-1 form-control form-date-picker",
-          filter ? "form-filter" : ""
+          "pl-10 pr-1 form-input form-input-date-picker",
+          filter ? "form-input-filter" : ""
         )}
       />
     </div>

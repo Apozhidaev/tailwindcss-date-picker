@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 @layer components {
-  .form-control {
+  .form-input {
     @apply block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-sm;
   }
 
-  .form-date-picker {
+  .form-input-date-picker {
     @apply max-w-[180px]
   }
 
-  .form-range-picker {
+  .form-input-range-picker {
     @apply max-w-[250px]
   }
 
-  .form-filter {
+  .form-input-filter {
     @apply ring-1 border-orange-300/80 ring-orange-300/80;
   }
 }

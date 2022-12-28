@@ -15,8 +15,8 @@ function RangePicker({ className, filter, ...inputProps }: RangePickerProps) {
       <RangePickerInput
         {...inputProps}
         className={classNames(
-          "pl-10 pr-1 form-control form-range-picker",
-          filter ? "form-filter" : ""
+          "pl-10 pr-1 form-input form-input-range-picker",
+          filter ? "form-input-filter" : ""
         )}
       />
     </div>
