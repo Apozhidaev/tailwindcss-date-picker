@@ -67,21 +67,22 @@ type DatePickerProps = {
   className?: string;
   minDate?: string;
   maxDate?: string;
+  date?: string;
+  onSelect: (date: string) => void;
   format?: string;
   placeholder?: string;
   position?: "left" | "right";
   resetButton?: boolean;
   firstDay?: number;
-  lang?: string;
-  zIndex?: number;
   scrollToDate?: boolean;
   documentClick?: boolean | (() => void);
   autoApply?: boolean;
-  cancelText?: string;
-  applyText?: string;
   filter?: boolean;
-  date?: string;
-  onSelect: (date: string) => void;
+  lang?: string;
+  locale?: {
+    cancel?: string;
+    apply?: string;
+  };
 }
 
 type RangePickerPreset = {
@@ -92,6 +93,9 @@ type RangePickerPreset = {
 
 type RangePickerProps = {
   className?: string;
+  startDate?: string;
+  endDate?: string;
+  onSelect: (start: string, end: string) => void;
   minDate?: string;
   maxDate?: string;
   format?: string;
@@ -99,18 +103,23 @@ type RangePickerProps = {
   position?: "left" | "right";
   resetButton?: boolean;
   firstDay?: number;
-  lang?: string;
-  zIndex?: number;
   scrollToDate?: boolean;
   documentClick?: boolean | (() => void);
   autoApply?: boolean;
-  cancelText?: string;
-  applyText?: string;
   filter?: boolean;
   presets?: RangePickerPreset[];
-  startDate?: string;
-  endDate?: string;
-  onSelect: (start: string, end: string) => void;
+  lang?: string;
+  locale?: {
+    cancel?: string;
+    apply?: string;
+  };
+   daysLocale?: {
+    one?: string;
+    two?: string;
+    few?: string;
+    many?: string;
+    other?: string;
+  };
 };
 
 ```
@@ -140,14 +149,15 @@ type DatePickerProps = {
   position?: "left" | "right";
   resetButton?: boolean;
   firstDay?: number;
-  lang?: string;
-  zIndex?: number;
   scrollToDate?: boolean;
   documentClick?: boolean | (() => void);
   autoApply?: boolean;
-  cancelText?: string;
-  applyText?: string;
   filter?: boolean;
+  lang?: string;
+  locale?: {
+    cancel?: string;
+    apply?: string;
+  };
 }
 
 type RangePickerProps = {
@@ -163,15 +173,23 @@ type RangePickerProps = {
   position?: "left" | "right";
   resetButton?: boolean;
   firstDay?: number;
-  lang?: string;
-  zIndex?: number;
   scrollToDate?: boolean;
   documentClick?: boolean | (() => void);
   autoApply?: boolean;
-  cancelText?: string;
-  applyText?: string;
   presets?: RangePickerPreset[];
   filter?: boolean;
+  lang?: string;
+  locale?: {
+    cancel?: string;
+    apply?: string;
+  };
+   daysLocale?: {
+    one?: string;
+    two?: string;
+    few?: string;
+    many?: string;
+    other?: string;
+  };
 };
 
 ```
@@ -180,7 +198,7 @@ type RangePickerProps = {
 ```css
 :root {
   --ease-color-bg-default: #fff;
-  --ease-color-bg-secondary: #f3f4f6;
+  --ease-color-bg-secondary: #f1f5f9;
   --ease-color-fg-default: #1e293b;
   --ease-color-fg-primary: #2e6fda;
   --ease-color-fg-secondary: #64748b;

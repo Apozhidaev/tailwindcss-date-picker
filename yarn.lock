@@ -273,10 +273,10 @@ loose-envify@^1.1.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-react-ease-picker@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/react-ease-picker/-/react-ease-picker-0.0.12.tgz#17c7e86d7b26fdeef003fd7432efc845eba3ab25"
-  integrity sha512-7xOpkIHDyRxBL65pJpvOJLv++blSPzOSG/ZZwDxCkAhF1F63jrP49CaOj8G9XVgMT88eNC/M0E8Fv0cvroICzg==
+react-ease-picker@^0.0.13:
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/react-ease-picker/-/react-ease-picker-0.0.13.tgz#d0811ee42306cdc8ee2bc48fb90ac9ebd20bdfe2"
+  integrity sha512-pLRZRM2O7rvJPfuSg7UQWompkX0k4rQxD2HGvkB50Va1XZ5LDs1H4uaKnrC5GctG0kEmSSf0SthWGdrml4iMIw==
   dependencies:
     react-easepick "^0.0.7"
     react-use-event-hook "^0.9.3"
