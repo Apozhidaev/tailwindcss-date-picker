@@ -73,6 +73,7 @@ type DatePickerProps = {
   placeholder?: string;
   position?: "left" | "right";
   resetButton?: boolean;
+  weekNumbers?: boolean;
   firstDay?: number;
   scrollToDate?: boolean;
   documentClick?: boolean | (() => void);
@@ -104,6 +105,7 @@ type RangePickerProps = {
   placeholder?: string;
   position?: "left" | "right";
   resetButton?: boolean;
+  weekNumbers?: boolean;
   firstDay?: number;
   scrollToDate?: boolean;
   documentClick?: boolean | (() => void);
@@ -152,6 +154,7 @@ type DatePickerProps = {
   placeholder?: string;
   position?: "left" | "right";
   resetButton?: boolean;
+  weekNumbers?: boolean;
   firstDay?: number;
   scrollToDate?: boolean;
   documentClick?: boolean | (() => void);
@@ -178,6 +181,7 @@ type RangePickerProps = {
   placeholder?: string;
   position?: "left" | "right";
   resetButton?: boolean;
+  weekNumbers?: boolean;
   firstDay?: number;
   scrollToDate?: boolean;
   documentClick?: boolean | (() => void);
