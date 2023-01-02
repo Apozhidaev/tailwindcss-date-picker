@@ -206,10 +206,10 @@ easepick-plugin-keyboard@^0.0.1:
   dependencies:
     "@easepick/base-plugin" "^1.2.0"
 
-easepick-react@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/easepick-react/-/easepick-react-0.0.6.tgz#9835b768eaeeaf81f30fdd10bf4fda70e994c9cf"
-  integrity sha512-+/CEt2DLMNFP1D0FCYKPSBLbORe1vNrtUDkTQqaMj8cwL62gyxNc1J1KZXh6UCnq8j4gvbVikyoYNEWX2nuWrQ==
+easepick-react@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/easepick-react/-/easepick-react-1.0.1.tgz#0ab66b94d1001405b1c36518d66b189eb7c4fed9"
+  integrity sha512-BbSH5XLkN3X6GXVtBKI0o9LscfNOrGc6MP9b7SRXxXEBQCrkMBdi6fgVMi2lZ/9m5Ht+e22A//pGyoR0lWRxHA==
 
 esbuild@^0.16.9:
   version "0.16.9"
@@ -251,10 +251,10 @@ loose-envify@^1.1.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-react-ease-picker@^0.0.17:
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/react-ease-picker/-/react-ease-picker-0.0.17.tgz#4a5380ac921981d544d3a15cb8e3e637f62a9ca2"
-  integrity sha512-YDl3brQHKBpk30ge548kiSb6SijLsWUblpsEPBRZtaovv1flnYY5SB6SvCZnf0fUn/25b6qmY9XDRvU8aP1H4Q==
+react-ease-picker@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/react-ease-picker/-/react-ease-picker-0.0.18.tgz#8eeba2cc9059b41385362f754cc22ad565a462d5"
+  integrity sha512-IeutW6n0/1pnGw9ycDnK0EedCDzmZaTUIadg3rTGuQ9tUFlSGtFLxcI825kuChZDGOLU8Mwzo7qME+083EhAog==
   dependencies:
     "@easepick/base-plugin" "^1.2.0"
     "@easepick/core" "^1.2.0"
@@ -264,7 +264,7 @@ react-ease-picker@^0.0.17:
     "@easepick/range-plugin" "^1.2.0"
     easepick-plugin-amp "^0.0.1"
     easepick-plugin-keyboard "^0.0.1"
-    easepick-react "^0.0.6"
+    easepick-react "^1.0.1"
     react-use-event-hook "^0.9.3"
 
 react-router-dom@^6.6.1:

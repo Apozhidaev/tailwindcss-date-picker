@@ -65,9 +65,9 @@ export default App;
 ```typescript
 type DatePickerProps = {
   className?: string;
-  minDate?: string;
-  maxDate?: string;
-  date?: string;
+  minDate?: string; // yyyy-mm-dd
+  maxDate?: string; // yyyy-mm-dd
+  date?: string; // yyyy-mm-dd
   onSelect: (date: string) => void;
   format?: string;
   placeholder?: string;
@@ -90,20 +90,21 @@ type DatePickerProps = {
 
 type RangePickerPreset = {
   label: string;
-  startDate?: string;
-  endDate?: string;
+  startDate?: string; // yyyy-mm-dd
+  endDate?: string; // yyyy-mm-dd
 };
 
 type RangePickerProps = {
   className?: string;
-  startDate?: string;
-  endDate?: string;
+  startDate?: string; // yyyy-mm-dd
+  endDate?: string; // yyyy-mm-dd
   onSelect: (start: string, end: string) => void;
-  minDate?: string;
-  maxDate?: string;
+  minDate?: string; // yyyy-mm-dd
+  maxDate?: string; // yyyy-mm-dd
   format?: string;
   placeholder?: string;
   position?: "left" | "right";
+  presetPosition?: "left" | "right" | "top" | "bottom";
   resetButton?: boolean;
   weekNumbers?: boolean;
   firstDay?: number;
@@ -146,10 +147,10 @@ import { RouteDatePicker, RouteRangePicker } from "@tailwind-rc/date-picker/rout
 ```typescript
 type DatePickerProps = {
   filterName: string;
-  defaultDate?: string;
+  defaultDate?: string; // yyyy-mm-dd
   className?: string;
-  minDate?: string;
-  maxDate?: string;
+  minDate?: string; // yyyy-mm-dd
+  maxDate?: string; // yyyy-mm-dd
   format?: string;
   placeholder?: string;
   position?: "left" | "right";
@@ -172,14 +173,15 @@ type DatePickerProps = {
 type RangePickerProps = {
   startFilterName: string;
   endFilterName: string;
-  defaultStartDate?: string;
-  defaultEndDate?: string;
+  defaultStartDate?: string; // yyyy-mm-dd
+  defaultEndDate?: string; // yyyy-mm-dd
   className?: string;
-  minDate?: string;
-  maxDate?: string;
+  minDate?: string; // yyyy-mm-dd
+  maxDate?: string; // yyyy-mm-dd
   format?: string;
   placeholder?: string;
   position?: "left" | "right";
+  presetPosition?: "left" | "right" | "top" | "bottom";
   resetButton?: boolean;
   weekNumbers?: boolean;
   firstDay?: number;
@@ -210,7 +212,7 @@ type RangePickerProps = {
 ```css
 :root {
   --ease-color-bg-default: #fff;
-  --ease-color-bg-secondary: #f1f5f9;
+  --ease-color-bg-secondary: #f2f5f8;
   --ease-color-fg-default: #1e293b;
   --ease-color-fg-primary: #2e6fda;
   --ease-color-fg-secondary: #64748b;
@@ -247,6 +249,7 @@ type RangePickerProps = {
   --ease-box-shadow: 0 4px 28px 0 rgb(0 0 0 / 12%);
   --ease-month-name-font-weight: 700;
   --ease-focus-color: #94a3b8;
+  --ease-select-outline-color: #e5e7eb;
   --ease-color-fg-locked: #9e9e9e;
   --ease-color-bg-locked: #ffab91;
   --ease-color-bg-unavailable: #f9f9f9;
