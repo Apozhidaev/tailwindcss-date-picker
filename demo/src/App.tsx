@@ -14,7 +14,7 @@ function App() {
         onSelect={(start, end) => {
           console.log(start, end);
         }}
-        options={{
+        defaultOptions={{
           position: "right",
           lockOptions: {
             minDate: "2020-01-01"

@@ -75,23 +75,25 @@ export default App;
 
 ```typescript
 type DatePickerProps = {
-  date?: string;
+  date?: string; // yyyy-mm-dd
   value?: string;
   onSetup?: (picker: PlainPicker) => void;
   onSelect?: (date: string) => void;
   onClear?: () => void;
   options?: DatePickerOptions;
+  defaultOptions?: DatePickerOptions;
   filter?: boolean;
 };
 
 type RangePickerProps = {
-  startDate?: string;
-  endDate?: string;
+  startDate?: string; // yyyy-mm-dd
+  endDate?: string; // yyyy-mm-dd
   value?: string;
   onSetup?: (picker: PlainPicker) => void;
   onSelect?: (start: string, end: string) => void;
   onClear?: () => void;
   options: RangePickerOptions;
+  defaultOptions?: RangePickerOptions;
   filter?: boolean;
 };
 ```
@@ -117,6 +119,7 @@ type DatePickerProps = {
   onSelect?: (date: string) => void;
   onClear?: () => void;
   options?: DatePickerOptions;
+  defaultOptions?: DatePickerOptions;
   filter?: boolean;
 };
 
@@ -129,6 +132,7 @@ type RangePickerProps = {
   onSelect?: (start: string, end: string) => void;
   onClear?: () => void;
   options: RangePickerOptions;
+  defaultOptions?: RangePickerOptions;
   filter?: boolean;
 };
 ```

@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import merge from "lodash.merge";
 import React, { memo, useMemo } from "react";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import {
@@ -7,31 +8,35 @@ import {
   RangePickerOptions,
 } from "react-temporal-picker";
 
-export type RangePickerProps = RangePickerInputProps & { filter?: boolean };
+export type RangePickerProps = RangePickerInputProps & {
+  filter?: boolean;
+  defaultOptions?: RangePickerOptions;
+};
 
 function RangePicker({
   className,
   filter,
+  defaultOptions,
   placeholder = "Start date – End date",
   ...inputProps
 }: RangePickerProps) {
   const options: RangePickerOptions = useMemo(() => {
-    return {
-      ...inputProps.options,
-      rangeOptions: {
-        delimiter: " – ",
-        ...inputProps.options?.rangeOptions,
-      },
-      extraOptions: {
-        dropdown: {
-          months: true,
-          years: true,
-          ...inputProps.options?.extraOptions?.dropdown,
+    return merge(
+      {
+        rangeOptions: {
+          delimiter: " – ",
         },
-        resetButton: true,
-        ...inputProps.options?.extraOptions,
+        extraOptions: {
+          dropdown: {
+            months: true,
+            years: true,
+          },
+          resetButton: true,
+        },
       },
-    };
+      defaultOptions,
+      inputProps.options
+    );
   }, [inputProps.options]);
   return (
     <div className={classNames("relative", className)}>

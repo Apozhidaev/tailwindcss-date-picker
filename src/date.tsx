@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import merge from "lodash.merge";
 import React, { memo, useMemo } from "react";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import {
@@ -7,27 +8,32 @@ import {
   DatePickerOptions,
 } from "react-temporal-picker";
 
-export type DatePickerProps = DatePickerInputProps & { filter?: boolean };
+export type DatePickerProps = DatePickerInputProps & {
+  filter?: boolean;
+  defaultOptions?: DatePickerOptions;
+};
 
 function DatePicker({
   className,
   filter,
   placeholder = "DD MMM, YYYY",
+  defaultOptions,
   ...inputProps
 }: DatePickerProps) {
   const options: DatePickerOptions = useMemo(() => {
-    return {
-      ...inputProps.options,
-      extraOptions: {
-        dropdown: {
-          months: true,
-          years: true,
-          ...inputProps.options?.extraOptions?.dropdown,
+    return merge(
+      {
+        extraOptions: {
+          dropdown: {
+            months: true,
+            years: true,
+          },
+          resetButton: true,
         },
-        resetButton: true,
-        ...inputProps.options?.extraOptions,
       },
-    };
+      defaultOptions,
+      inputProps.options
+    );
   }, [inputProps.options]);
   return (
     <div className={classNames("relative", className)}>
