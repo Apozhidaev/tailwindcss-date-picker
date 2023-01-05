@@ -5,7 +5,7 @@ import RangePicker from "../range";
 
 export type RouteRangePickerProps = Omit<
   RangePickerProps,
-  "startDate" | "endDate" | "onSelect" | "onClear"
+  "value" | "startDate" | "endDate" | "onSelect" | "onClear"
 > & {
   startFilterName: string;
   endFilterName: string;

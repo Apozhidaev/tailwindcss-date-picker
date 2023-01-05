@@ -1,6 +1,6 @@
 # tailwindcss-date-picker
 
-DatePicker and RangePicker base on [react-ease-picker](https://www.npmjs.com/package/react-ease-picker).
+DatePicker and RangePicker base on [react-temporal-picker](https://www.npmjs.com/package/react-temporal-picker).
 
 ## How to Use
 
@@ -28,29 +28,40 @@ function App() {
   return (
     <div className="p-10 grid grid-cols-2 gap-4">
       <DatePicker
-        minDate="2020-01-01"
-        maxDate="2023-01-01"
         onSelect={(date) => {
           console.log(date);
         }}
+        filter
       />
       <RangePicker
         onSelect={(start, end) => {
           console.log(start, end);
         }}
-        presets={[
-          {
-            label: "Last Week",
-            startDate: "2022-01-01",
-            endDate: "2023-01-01",
+        options={{
+          position: "right",
+          lockOptions: {
+            minDate: "2020-01-01"
           },
-          {
-            label: "Last Month",
-            startDate: "2021-01-01",
-            endDate: "2023-01-01",
+          presetOptions: {
+            presets: [
+              {
+                label: "Last Week",
+                start: "2022-01-01",
+                end: "2023-01-01",
+              },
+              {
+                label: "Last Month",
+                start: "2021-01-01",
+                end: "2023-01-01",
+              },
+              {
+                label: "Last Year",
+                start: "2019-01-01",
+                end: "2023-01-01",
+              },
+            ],
           },
-        ]}
-        position="right"
+        }}
       />
     </div>
   );
@@ -64,71 +75,25 @@ export default App;
 
 ```typescript
 type DatePickerProps = {
-  className?: string;
-  minDate?: string; // yyyy-mm-dd
-  maxDate?: string; // yyyy-mm-dd
-  date?: string; // yyyy-mm-dd
-  onSelect: (date: string) => void;
-  format?: string;
-  placeholder?: string;
-  position?: "left" | "right";
-  resetButton?: boolean;
-  weekNumbers?: boolean;
-  firstDay?: number;
-  scrollToDate?: boolean;
-  documentClick?: boolean | (() => void);
-  autoApply?: boolean;
+  date?: string;
+  value?: string;
+  onSetup?: (picker: PlainPicker) => void;
+  onSelect?: (date: string) => void;
+  onClear?: () => void;
+  options?: DatePickerOptions;
   filter?: boolean;
-  lang?: string;
-  locale?: {
-    cancel?: string;
-    apply?: string;
-  };
-  offsetTop?: number;
-  offsetLeft?: number;
-}
-
-type RangePickerPreset = {
-  label: string;
-  startDate?: string; // yyyy-mm-dd
-  endDate?: string; // yyyy-mm-dd
 };
 
 type RangePickerProps = {
-  className?: string;
-  startDate?: string; // yyyy-mm-dd
-  endDate?: string; // yyyy-mm-dd
-  onSelect: (start: string, end: string) => void;
-  minDate?: string; // yyyy-mm-dd
-  maxDate?: string; // yyyy-mm-dd
-  format?: string;
-  placeholder?: string;
-  position?: "left" | "right";
-  presetPosition?: "left" | "right" | "top" | "bottom";
-  resetButton?: boolean;
-  weekNumbers?: boolean;
-  firstDay?: number;
-  scrollToDate?: boolean;
-  documentClick?: boolean | (() => void);
-  autoApply?: boolean;
+  startDate?: string;
+  endDate?: string;
+  value?: string;
+  onSetup?: (picker: PlainPicker) => void;
+  onSelect?: (start: string, end: string) => void;
+  onClear?: () => void;
+  options: RangePickerOptions;
   filter?: boolean;
-  presets?: RangePickerPreset[];
-  lang?: string;
-  locale?: {
-    cancel?: string;
-    apply?: string;
-  };
-   daysLocale?: {
-    one?: string;
-    two?: string;
-    few?: string;
-    many?: string;
-    other?: string;
-  };
-  offsetTop?: number;
-  offsetLeft?: number;
 };
-
 ```
 
 ## Use with React Router
@@ -148,113 +113,73 @@ import { RouteDatePicker, RouteRangePicker } from "@tailwind-rc/date-picker/rout
 type DatePickerProps = {
   filterName: string;
   defaultDate?: string; // yyyy-mm-dd
-  className?: string;
-  minDate?: string; // yyyy-mm-dd
-  maxDate?: string; // yyyy-mm-dd
-  format?: string;
-  placeholder?: string;
-  position?: "left" | "right";
-  resetButton?: boolean;
-  weekNumbers?: boolean;
-  firstDay?: number;
-  scrollToDate?: boolean;
-  documentClick?: boolean | (() => void);
-  autoApply?: boolean;
+  onSetup?: (picker: PlainPicker) => void;
+  onSelect?: (date: string) => void;
+  onClear?: () => void;
+  options?: DatePickerOptions;
   filter?: boolean;
-  lang?: string;
-  locale?: {
-    cancel?: string;
-    apply?: string;
-  };
-  offsetTop?: number;
-  offsetLeft?: number;
-}
+};
 
 type RangePickerProps = {
   startFilterName: string;
   endFilterName: string;
   defaultStartDate?: string; // yyyy-mm-dd
   defaultEndDate?: string; // yyyy-mm-dd
-  className?: string;
-  minDate?: string; // yyyy-mm-dd
-  maxDate?: string; // yyyy-mm-dd
-  format?: string;
-  placeholder?: string;
-  position?: "left" | "right";
-  presetPosition?: "left" | "right" | "top" | "bottom";
-  resetButton?: boolean;
-  weekNumbers?: boolean;
-  firstDay?: number;
-  scrollToDate?: boolean;
-  documentClick?: boolean | (() => void);
-  autoApply?: boolean;
-  presets?: RangePickerPreset[];
+  onSetup?: (picker: PlainPicker) => void;
+  onSelect?: (start: string, end: string) => void;
+  onClear?: () => void;
+  options: RangePickerOptions;
   filter?: boolean;
-  lang?: string;
-  locale?: {
-    cancel?: string;
-    apply?: string;
-  };
-   daysLocale?: {
-    one?: string;
-    two?: string;
-    few?: string;
-    many?: string;
-    other?: string;
-  };
-  offsetTop?: number;
-  offsetLeft?: number;
 };
-
 ```
 
 ## Customize
 ```css
 :root {
-  --ease-color-bg-default: #fff;
-  --ease-color-bg-secondary: #f2f5f8;
-  --ease-color-fg-default: #1e293b;
-  --ease-color-fg-primary: #2e6fda;
-  --ease-color-fg-secondary: #64748b;
-  --ease-color-fg-selected: #fff;
-  --ease-color-fg-muted: #64748b;
-  --ease-color-fg-accent: #e63757;
-  --ease-color-btn-primary-bg: #2e6fda;
-  --ease-color-btn-primary-fg: #fff;
-  --ease-color-btn-primary-border: #2e6fda;
-  --ease-color-btn-primary-hover-bg: #2c67cd;
-  --ease-color-btn-primary-hover-fg: #fff;
-  --ease-color-btn-primary-hover-border: #2c67cd;
-  --ease-color-btn-primary-disabled-bg: #80aff8;
-  --ease-color-btn-primary-disabled-fg: #fff;
-  --ease-color-btn-primary-disabled-border: #80aff8;
-  --ease-color-btn-secondary-bg: #fff;
-  --ease-color-btn-secondary-fg: #475569;
-  --ease-color-btn-secondary-border: #cbd5e1;
-  --ease-color-btn-secondary-hover-bg: #f8fafc;
-  --ease-color-btn-secondary-hover-fg: #475569;
-  --ease-color-btn-secondary-hover-border: #cbd5e1;
-  --ease-color-btn-secondary-disabled-bg: #cbd5e1;
-  --ease-color-btn-secondary-disabled-fg: #fff;
-  --ease-color-btn-secondary-disabled-border: #cbd5e1;
-  --ease-color-border-default: #cbd5e1;
-  --ease-color-border-locked: #f9f9f9;
-  --ease-day-width: 43px;
-  --ease-day-height: 37px;
-  --ease-z-index: 40;
-  --ease-border-radius: 2px;
-  --ease-primary-color: #2e6fda;
-  --ease-secondary-color: #64748b;
-  --ease-font-family: inherit;
-  --ease-box-shadow: 0 4px 28px 0 rgb(0 0 0 / 12%);
-  --ease-month-name-font-weight: 700;
-  --ease-focus-color: #94a3b8;
-  --ease-select-outline-color: #e5e7eb;
-  --ease-color-fg-locked: #9e9e9e;
-  --ease-color-bg-locked: #ffab91;
-  --ease-color-bg-unavailable: #f9f9f9;
-  --ease-color-bg-inrange: #e6effe;
-  --ease-color-bg-tooltip: #fff;
-  --ease-color-fg-tooltip: #1e293b;
+  --temporal-picker-color-bg-default: #fff;
+  --temporal-picker-color-bg-secondary: #f2f5f8;
+  --temporal-picker-color-fg-default: #1e293b;
+  --temporal-picker-color-fg-primary: #2e6fda;
+  --temporal-picker-color-fg-secondary: #64748b;
+  --temporal-picker-color-fg-selected: #fff;
+  --temporal-picker-color-fg-muted: #64748b;
+  --temporal-picker-color-fg-accent: #e63757;
+  --temporal-picker-color-btn-primary-bg: #2e6fda;
+  --temporal-picker-color-btn-primary-fg: #fff;
+  --temporal-picker-color-btn-primary-border: #2e6fda;
+  --temporal-picker-color-btn-primary-hover-bg: #2c67cd;
+  --temporal-picker-color-btn-primary-hover-fg: #fff;
+  --temporal-picker-color-btn-primary-hover-border: #2c67cd;
+  --temporal-picker-color-btn-primary-disabled-bg: #80aff8;
+  --temporal-picker-color-btn-primary-disabled-fg: #fff;
+  --temporal-picker-color-btn-primary-disabled-border: #80aff8;
+  --temporal-picker-color-btn-secondary-bg: #fff;
+  --temporal-picker-color-btn-secondary-fg: #475569;
+  --temporal-picker-color-btn-secondary-border: #cbd5e1;
+  --temporal-picker-color-btn-secondary-hover-bg: #f8fafc;
+  --temporal-picker-color-btn-secondary-hover-fg: #475569;
+  --temporal-picker-color-btn-secondary-hover-border: #cbd5e1;
+  --temporal-picker-color-btn-secondary-disabled-bg: #cbd5e1;
+  --temporal-picker-color-btn-secondary-disabled-fg: #fff;
+  --temporal-picker-color-btn-secondary-disabled-border: #cbd5e1;
+  --temporal-picker-color-border-default: #cbd5e1;
+  --temporal-picker-color-border-locked: #f9f9f9;
+  --temporal-picker-day-width: 43px;
+  --temporal-picker-day-height: 37px;
+  --temporal-picker-z-index: 40;
+  --temporal-picker-border-radius: 2px;
+  --temporal-picker-primary-color: #2e6fda;
+  --temporal-picker-secondary-color: #64748b;
+  --temporal-picker-font-family: inherit;
+  --temporal-picker-box-shadow: 0 4px 28px 0 rgb(0 0 0 / 12%);
+  --temporal-picker-month-name-font-weight: 700;
+  --temporal-picker-focus-color: #94a3b8;
+  --temporal-picker-select-outline-color: #e5e7eb;
+  --temporal-picker-color-fg-locked: #9e9e9e;
+  --temporal-picker-color-bg-locked: #ffab91;
+  --temporal-picker-color-bg-unavailable: #f9f9f9;
+  --temporal-picker-color-bg-inrange: #e6effe;
+  --temporal-picker-color-bg-tooltip: #fff;
+  --temporal-picker-color-fg-tooltip: #1e293b;
 }
 ```

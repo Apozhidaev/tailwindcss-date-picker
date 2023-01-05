@@ -5,7 +5,7 @@ import DatePicker from "../date";
 
 export type RouteDatePickerProps = Omit<
   DatePickerProps,
-  "date" | "onSelect" | "onClear"
+  "value" | "date" | "onSelect" | "onClear"
 > & {
   filterName: string;
   defaultDate?: string;
