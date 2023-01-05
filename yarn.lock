@@ -2,47 +2,6 @@
 # yarn lockfile v1
 
 
-"@easepick/base-plugin@^1.1.0", "@easepick/base-plugin@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@easepick/base-plugin/-/base-plugin-1.2.0.tgz#76e88ba5c39b53b8a1de80b80fe890f3273bbd9d"
-  integrity sha512-N5zeUW2E0gyOuVCiQs2va0kM2hzojE4XFDrlYBZ4JmQ1pflkipaVgrJoTJVP5/g4dhO94zFhwJ4chhRFnpK1IQ==
-  dependencies:
-    "@easepick/core" "^1.1.0"
-
-"@easepick/core@^1.1.0", "@easepick/core@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@easepick/core/-/core-1.2.0.tgz#a0789aa626e8b6571bc5577f81df66da30f489a1"
-  integrity sha512-kfuQcx/vMbEXZfDOHgk74jFnQFysy+2nXpRH+ATyahYoMqAvtImLOkOxNmdSV0AcWdGeo3PJqB272pMI175EUg==
-  dependencies:
-    "@easepick/datetime" "^1.1.0"
-
-"@easepick/datetime@^1.1.0", "@easepick/datetime@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@easepick/datetime/-/datetime-1.2.0.tgz#2018e8080961b1cff0ed021613559c1090107dd1"
-  integrity sha512-J7xQSMIPCMOXE8wTHEY/XsleQ3P6w+BpV0VAM8k6YlF7w/rzHY9EkRqa4EEjaifMuOLWqEMIiJYijBw7zcBjOA==
-
-"@easepick/lock-plugin@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@easepick/lock-plugin/-/lock-plugin-1.2.0.tgz#57b43963fb699261fe88e7f14181d719329565fa"
-  integrity sha512-kKxsStxQJukk+FTyjJR8fTQOLDfB/JwDyq1Yy/DYQEVPNIFy3676l2CPS59yVgpExsRl48O3KBTSBIAE4Sschw==
-  dependencies:
-    "@easepick/base-plugin" "^1.1.0"
-
-"@easepick/preset-plugin@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@easepick/preset-plugin/-/preset-plugin-1.2.0.tgz#3797f58b8d55698243418e017b3d10f7973216e7"
-  integrity sha512-d9W9Ruuk1OaBGm0YVLoyH8l4P843YAWweTe4L7+U009Esw9/h8+UlmG19dO73dBfdLsPcighwahzNOQWfjOPlg==
-  dependencies:
-    "@easepick/base-plugin" "^1.1.0"
-    "@easepick/range-plugin" "^1.1.0"
-
-"@easepick/range-plugin@^1.1.0", "@easepick/range-plugin@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@easepick/range-plugin/-/range-plugin-1.2.0.tgz#42fc4b7a9d06b272124c14134b9747343d577b2f"
-  integrity sha512-LcG6vffmnqdvhNxcdq3cfVtLEzL18Wmu6HgA++vuyJ5WaqTbmQ40zahXcAaadzqeiVTHSYkvzbetcMAjSXvdjw==
-  dependencies:
-    "@easepick/base-plugin" "^1.1.0"
-
 "@esbuild/android-arm64@0.16.9":
   version "0.16.9"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.16.9.tgz#474da719599f99d820ec010c92846a4f685fa28a"
@@ -192,25 +151,6 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
 
-easepick-plugin-amp@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/easepick-plugin-amp/-/easepick-plugin-amp-0.0.1.tgz#fb10b47546cb995b427ca8447f7d417660b0a37d"
-  integrity sha512-S1LdjdawGkkTxxHQtPPkdl/24EdMPu12Tz/+XwRs0tXevxgQciektt3blUejL2TKAhMUa4RvaV8H+P2EXCEQBw==
-  dependencies:
-    "@easepick/base-plugin" "^1.2.0"
-
-easepick-plugin-keyboard@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/easepick-plugin-keyboard/-/easepick-plugin-keyboard-0.0.1.tgz#1a2f3a63ccfdf884906c8e583a4db4883ea92015"
-  integrity sha512-WyRZzv8flEW9v4SZmLf9aS0njecP9YZ1xDlx2cXlxpzsFsJ8Suubhd1cunrrMBRLMT3UoN2357161cWXqchllQ==
-  dependencies:
-    "@easepick/base-plugin" "^1.2.0"
-
-easepick-react@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/easepick-react/-/easepick-react-1.0.1.tgz#0ab66b94d1001405b1c36518d66b189eb7c4fed9"
-  integrity sha512-BbSH5XLkN3X6GXVtBKI0o9LscfNOrGc6MP9b7SRXxXEBQCrkMBdi6fgVMi2lZ/9m5Ht+e22A//pGyoR0lWRxHA==
-
 esbuild@^0.16.9:
   version "0.16.9"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.16.9.tgz#01b6c3a6cbc072108253ac160a0734229bf8c921"
@@ -251,22 +191,6 @@ loose-envify@^1.1.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-react-ease-picker@^0.0.18:
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/react-ease-picker/-/react-ease-picker-0.0.18.tgz#8eeba2cc9059b41385362f754cc22ad565a462d5"
-  integrity sha512-IeutW6n0/1pnGw9ycDnK0EedCDzmZaTUIadg3rTGuQ9tUFlSGtFLxcI825kuChZDGOLU8Mwzo7qME+083EhAog==
-  dependencies:
-    "@easepick/base-plugin" "^1.2.0"
-    "@easepick/core" "^1.2.0"
-    "@easepick/datetime" "^1.2.0"
-    "@easepick/lock-plugin" "^1.2.0"
-    "@easepick/preset-plugin" "^1.2.0"
-    "@easepick/range-plugin" "^1.2.0"
-    easepick-plugin-amp "^0.0.1"
-    easepick-plugin-keyboard "^0.0.1"
-    easepick-react "^1.0.1"
-    react-use-event-hook "^0.9.3"
-
 react-router-dom@^6.6.1:
   version "6.6.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.6.1.tgz#1b96ec0b2cefa7319f1251383ea5b41295ee260d"
@@ -282,6 +206,14 @@ react-router@6.6.1:
   dependencies:
     "@remix-run/router" "1.2.1"
 
+react-temporal-picker@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/react-temporal-picker/-/react-temporal-picker-0.0.4.tgz#e75f883649cdca6f598447a46e5e3d67ce291824"
+  integrity sha512-lCb+We5rSosIQiGgoauzFH/gEGNorlBwI/HD4gmNsX75N1jvXHYctJSHRMKUnDQZaEs5aH3ipPnNKZja2ZbHyg==
+  dependencies:
+    react-use-event-hook "^0.9.3"
+    temporal-picker "^0.0.7"
+
 react-use-event-hook@^0.9.3:
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/react-use-event-hook/-/react-use-event-hook-0.9.3.tgz#08dc42eaa866dff57d2a0b1386b8d453adfc2ea4"
@@ -293,6 +225,11 @@ react@^18.2.0:
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
   dependencies:
     loose-envify "^1.1.0"
+
+temporal-picker@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/temporal-picker/-/temporal-picker-0.0.7.tgz#78b98a2a42c7c4ee5cff78473c930bc7a7783f55"
+  integrity sha512-ytHLe6MRiWBLbP52nNhzIESp+udeT9aMEK7je+aaYAZbjfogUniMa61mbPTHEv4tUjnGy8FIK8JXv+U4pur+lQ==
 
 typescript@^4.9.4:
   version "4.9.4"
