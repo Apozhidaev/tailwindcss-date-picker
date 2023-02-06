@@ -23,9 +23,7 @@ function RangePicker({
   const options: RangePickerOptions = useMemo(() => {
     return merge(
       {
-        rangeOptions: {
-          delimiter: " – ",
-        },
+        delimiter: " – ",
         extraOptions: {
           dropdown: {
             months: true,

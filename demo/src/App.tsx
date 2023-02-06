@@ -15,9 +15,10 @@ function App() {
           console.log(start, end);
         }}
         defaultOptions={{
-          position: "right",
+          placement: "bottom-end",
           lockOptions: {
-            minDate: "2020-01-01"
+            minDate: "2020-01-01",
+
           },
           presetOptions: {
             presets: [

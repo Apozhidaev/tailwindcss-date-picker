@@ -117,6 +117,11 @@
   resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.13.tgz#9b1cc54ff77d6625c9565efdce0054a4bcd9074c"
   integrity sha512-iSN5XwmagrnirWlYEWNPdCDj9aRYVD/lnK3JlsC9/+fqGF80k8C7rl+1HCvBX0dBoagKqOFBs6fMhJJ1hOg1EQ==
 
+"@popperjs/core@^2.11.6":
+  version "2.11.6"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.6.tgz#cee20bd55e68a1720bdab363ecf0c821ded4cd45"
+  integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
+
 "@remix-run/router@1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.2.1.tgz#812edd4104a15a493dda1ccac0b352270d7a188c"
@@ -208,6 +213,11 @@ loose-envify@^1.1.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+luxon@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.2.1.tgz#14f1af209188ad61212578ea7e3d518d18cee45f"
+  integrity sha512-QrwPArQCNLAKGO/C+ZIilgIuDnEnKx5QYODdDtbFaxzsbZcc/a7WFq7MhsVYgRlwawLtvOUESTlfJ+hc/USqPg==
+
 react-router-dom@^6.6.1:
   version "6.6.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.6.1.tgz#1b96ec0b2cefa7319f1251383ea5b41295ee260d"
@@ -223,13 +233,13 @@ react-router@6.6.1:
   dependencies:
     "@remix-run/router" "1.2.1"
 
-react-temporal-picker@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/react-temporal-picker/-/react-temporal-picker-0.0.4.tgz#e75f883649cdca6f598447a46e5e3d67ce291824"
-  integrity sha512-lCb+We5rSosIQiGgoauzFH/gEGNorlBwI/HD4gmNsX75N1jvXHYctJSHRMKUnDQZaEs5aH3ipPnNKZja2ZbHyg==
+react-temporal-picker@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-temporal-picker/-/react-temporal-picker-1.0.1.tgz#820193b0971d5d3b618b7f80dbd7b27b02e63d10"
+  integrity sha512-Z7ASYW7GwFDhkC7k0X9raBxdUh+4h/NY+OBCsJaOnrPBUWuZfH0XV5yzH/c3+lD3X9GOL/WshDVtY2KGXPIUyg==
   dependencies:
     react-use-event-hook "^0.9.3"
-    temporal-picker "^0.0.7"
+    temporal-picker "^1.0.2"
 
 react-use-event-hook@^0.9.3:
   version "0.9.3"
@@ -243,10 +253,14 @@ react@^18.2.0:
   dependencies:
     loose-envify "^1.1.0"
 
-temporal-picker@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/temporal-picker/-/temporal-picker-0.0.7.tgz#78b98a2a42c7c4ee5cff78473c930bc7a7783f55"
-  integrity sha512-ytHLe6MRiWBLbP52nNhzIESp+udeT9aMEK7je+aaYAZbjfogUniMa61mbPTHEv4tUjnGy8FIK8JXv+U4pur+lQ==
+temporal-picker@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/temporal-picker/-/temporal-picker-1.0.2.tgz#f644700f9379c81071548a94e1f7d25af71590ca"
+  integrity sha512-W+JP3Fl8vay35QSB3kkDCxzWaiALB7fWEDJLWqYNFzqFRA32m+zegxpNSrWmbkX5Q360aOugBFMTzsJPnsrDWg==
+  dependencies:
+    "@popperjs/core" "^2.11.6"
+    lodash.merge "^4.6.2"
+    luxon "^3.2.1"
 
 typescript@^4.9.4:
   version "4.9.4"
